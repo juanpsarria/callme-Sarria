@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/PreEntrega1-Sarria/static/css/main.073c9b0a.css",
-    "main.js": "/PreEntrega1-Sarria/static/js/main.e6342253.js",
+    "main.css": "/PreEntrega1-Sarria/static/css/main.09f65b80.css",
+    "main.js": "/PreEntrega1-Sarria/static/js/main.942d47be.js",
     "static/js/787.c07c8f32.chunk.js": "/PreEntrega1-Sarria/static/js/787.c07c8f32.chunk.js",
-    "static/media/logo.svg": "/PreEntrega1-Sarria/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/logo.png": "/PreEntrega1-Sarria/static/media/logo.756d049305c62439c8b1.png",
     "index.html": "/PreEntrega1-Sarria/index.html",
-    "main.073c9b0a.css.map": "/PreEntrega1-Sarria/static/css/main.073c9b0a.css.map",
-    "main.e6342253.js.map": "/PreEntrega1-Sarria/static/js/main.e6342253.js.map",
+    "main.09f65b80.css.map": "/PreEntrega1-Sarria/static/css/main.09f65b80.css.map",
+    "main.942d47be.js.map": "/PreEntrega1-Sarria/static/js/main.942d47be.js.map",
     "787.c07c8f32.chunk.js.map": "/PreEntrega1-Sarria/static/js/787.c07c8f32.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.e6342253.js"
+    "static/css/main.09f65b80.css",
+    "static/js/main.942d47be.js"
   ]
 }
