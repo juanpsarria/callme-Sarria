@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/juanpsarria/PreEntrega1-Sarria.git/static/css/main.073c9b0a.css",
-    "main.js": "/juanpsarria/PreEntrega1-Sarria.git/static/js/main.46950a7f.js",
-    "static/js/787.c07c8f32.chunk.js": "/juanpsarria/PreEntrega1-Sarria.git/static/js/787.c07c8f32.chunk.js",
-    "static/media/logo.svg": "/juanpsarria/PreEntrega1-Sarria.git/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/juanpsarria/PreEntrega1-Sarria.git/index.html",
-    "main.073c9b0a.css.map": "/juanpsarria/PreEntrega1-Sarria.git/static/css/main.073c9b0a.css.map",
-    "main.46950a7f.js.map": "/juanpsarria/PreEntrega1-Sarria.git/static/js/main.46950a7f.js.map",
-    "787.c07c8f32.chunk.js.map": "/juanpsarria/PreEntrega1-Sarria.git/static/js/787.c07c8f32.chunk.js.map"
+    "main.css": "/PreEntrega1-Sarria/static/css/main.073c9b0a.css",
+    "main.js": "/PreEntrega1-Sarria/static/js/main.e6342253.js",
+    "static/js/787.c07c8f32.chunk.js": "/PreEntrega1-Sarria/static/js/787.c07c8f32.chunk.js",
+    "static/media/logo.svg": "/PreEntrega1-Sarria/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/PreEntrega1-Sarria/index.html",
+    "main.073c9b0a.css.map": "/PreEntrega1-Sarria/static/css/main.073c9b0a.css.map",
+    "main.e6342253.js.map": "/PreEntrega1-Sarria/static/js/main.e6342253.js.map",
+    "787.c07c8f32.chunk.js.map": "/PreEntrega1-Sarria/static/js/787.c07c8f32.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.46950a7f.js"
+    "static/js/main.e6342253.js"
   ]
 }
