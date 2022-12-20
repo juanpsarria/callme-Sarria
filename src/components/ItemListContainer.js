@@ -1,13 +1,26 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
+import { PRODUCTS } from "../constants/data/products";
+import Card from "./Item";
 import "./style.css";
 
-//SE CREA COMPONENTE CON PROP GREETINGS, QUE SE IMPORTA EN App.js
-const ItemListContainer = ({greetings}) =>{
-    return(
-    <>
-    <h1 style={{textAlign: 'center', fontSize: '3em', color: '#01111d', backgroundColor: '#f5fff9', padding: '10'}}>{greetings}</h1>
-    </>
-    )
-}
+const ItemListContainer = () => {
+    const navigate = useNavigate();
+    const onHandlerSelect = (product) => {
+        navigate(`/product/${product.id}`, { state: product })
+    }
+    return (
+        <>
+            <div>
+                <h1 className="new-products">NUEVOS INGRESOS</h1>
+            </div>
+            <div className='products-container'>
+                {PRODUCTS.map((product) => (
+                    <Card product={product} key={product.id} onSelect={onHandlerSelect}/>
+                ))}
+            </div>
+        </>
+    );
+};
 
-export default ItemListContainer
+export default ItemListContainer;

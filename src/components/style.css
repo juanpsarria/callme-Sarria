@@ -1,51 +1,195 @@
-header {
-    width: 100%;
-    background-color: #01111d;
+/*--Styles de Item.js e ItemListContainer.js --*/
+
+.new-products{
+    color: #1c1c21;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.products-container {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
+    flex: 1;
+    width: 100%;
+    padding: 2rem 0;
+}
+
+.link-card{
+    text-decoration: none;
+}
+
+.card {
+    color: #1c1c21;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: #1c1c21 solid 1px;
+    box-shadow: 0px 0px 15px -3px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 15px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 23px -3px rgba(0,0,0,0.75);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0.5rem;
+    padding: 1rem;
+    width: 26%;
+    height: 550px;
+    transition: 0.3s;
+}
+
+.card:hover{
+    transform: scale(1.02);
+}
+
+.card-image {
+    width: 150px;
+    height: 200px;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-name {
+    font-size: 1.2rem;
+}
+
+.card-description {
+    font-size: 0.9rem;
+    text-align: justify;
+}
+
+.card-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+
+/**--Styles de ItemDetail.js e ItemDetailContainer.js--**/
+
+.detail-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+    padding: 2rem 0;
+}
+
+.detail{
+    width: 100%;
+    margin: 2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.app-logo{
-    width: 20em;
-    height: 7em;
-    float: left;
+.detail-image{
+    width: 400px;
+    height: 600px;
 }
 
-.nav-list{
-    list-style: none;
-    text-align: center;
+.detail-content{
+    width: 60%;
+    margin: 2em;
     display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
-.nav-list a {
-    text-decoration: none;
-    color: #f5fff9;
-    font-size: 1.3em;
-    margin: 10px;
-    transition: 0.5s ease-in;
+.detail-name{
+    color: #1c1c21;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
 }
 
-.nav-list a:hover{
-    color: #25c1b9;
-    text-decoration: underline;
+.detail-description{
+    font-size: 1rem;
+    text-align: justify;
+    line-height: 1.5em;
 }
 
-.cart-widget-container{
-    float: right;
+.price-buttons-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-detail-price{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+}
+
+.detail-price{
+    font-size: 1.9em;
+    font-weight: bold;
     margin: 5px;
 }
 
-.cart-img{
-    width: 3em;
-    height: 3em;
+.container-detail-price span{
+    font-size: 0.9em;
+    margin: 5px;
 }
 
-.cart-container span{
-    color: #f5fff9;
+.buttons-container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    margin: 5px;
+}
+
+.count-container{
+    display: flex;
+    margin: 10px;
+}
+
+.count-container-button{
+    width: 50px;
+    margin: 5px;
+    border: solid 2px #1c1c21;
+    border-radius: 20px;
+    color: #1c1c21;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.count-container-quantity{
+    width: 50px;
+    margin: 5px;
+    color: #1c1c21;
+    background-color: #ffffff;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.add-to-cart-button{
+    width: 40%;
+    padding: 10px;
+    border-radius: 30px;
+    color: #ffffff;
+    background-color: #1c1c21;
     font-size: 1em;
     font-weight: bold;
-    background-color: #3176f4;
-    padding: 7px;
-    border-radius: 25px;
+    text-align: center;
+}
+
+.add-to-cart-button:hover{
+    background-color: rgb(42, 42, 172);
 }

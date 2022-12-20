@@ -1,0 +1,71 @@
+header {
+    width: 100%;
+    background-color: #1c1c21;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.app-logo{
+    width: 20em;
+    height: 4em;
+    float: left;
+    padding-left: 20px;
+}
+
+.nav-list{
+    list-style: none;
+    text-align: center;
+    display: flex;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.3em;
+    margin: 10px;
+    transition: 0.4s ease-in;
+}
+
+.nav-list a:hover{
+    color: #1c1c21;
+    background-color: #ffffff;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+.cart-widget-container{
+    float: right;
+    margin: 5px;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-img{
+    width: 2.5em;
+    height: 2.5em;
+}
+
+.cart-quantity-container{
+    height: 1em;
+    width: 1em;
+    border-radius: 50%;
+    background-color: red;
+    padding: 0.3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 30px;
+    right: 50px;
+}
+
+.cart-quantity{
+    color: #ffffff;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    padding: 7px;
+}

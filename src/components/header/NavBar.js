@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 //SE IMPORTA LOGO
 import logo from "./img/logo.png";
 //SE IMPORTA COMPONENTE
@@ -11,13 +12,13 @@ const NavBar = () => {
     return (
         <header className="app-header">
             <div>
-                <img src={logo} className="app-logo" alt="logo"/>
+                <Link to='/'><img src={logo} className="app-logo" alt="logo"/></Link>
             </div>
             <div>
                 <ul className="nav-list">
-                    <li><a href="">CELULARES</a></li>
-                    <li><a href="">TABLETS</a></li>
-                    <li><a href="">ACCESORIOS</a></li>
+                    <li><a>CELULARES</a></li>
+                    <li><a>TABLETS</a></li>
+                    <li><a>ACCESORIOS</a></li>
                 </ul>
             </div>
             <div className="cart-widget-container">
