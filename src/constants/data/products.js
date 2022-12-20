@@ -80,3 +80,11 @@ export const PRODUCTS = [
         stock: 10,
     },
 ]
+
+export const getProducts = () => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(PRODUCTS);
+        }, 2000);
+    });
+};

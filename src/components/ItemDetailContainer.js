@@ -1,11 +1,18 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
-import { PRODUCTS } from "../constants/data/products";
+import { getProducts } from "../constants/data/products";
 import Detail from "./ItemDetail";
 import "./style.css";
 
 const ItemDetailContainer = () => {
-    const { id } = useParams() || {};
+    const [products, setProducts]= useState([])
+
+    useEffect(() => {
+        getProducts()
+        .then((res) => setProducts(res))
+    },[])
+
+    const {id}= useParams();
     const { state } = useLocation() || {};
     const [cart, setCart] = useState([]);
 
@@ -28,7 +35,7 @@ const ItemDetailContainer = () => {
         })
     }
     const onIncreaseItem = (id) => {
-        const item = PRODUCTS.find((product) => product.id === id);
+        const item = products.find((product) => product.id === id);
         if(cart?.find((product) => product.id === id)?.quantity === item.stock) return;
         if(cart?.length === 0) {
             setCart([{...item, quantity: 1}])
@@ -50,10 +57,12 @@ const ItemDetailContainer = () => {
     const getItemQuantity = (id) => {
         return cart?.find((product) => product.id === id)?.quantity || 0;
     }
+
     return (
         <div className="detail-container">
             {state ? (
             <Detail 
+                id={id}
                 product={state} 
                 key={state?.name} 
                 onSelect={() => {}} type='card' 

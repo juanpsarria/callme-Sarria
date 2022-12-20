@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 //SE IMPORTA LOGO
 import logo from "./img/logo.png";
 //SE IMPORTA COMPONENTE
@@ -16,9 +16,9 @@ const NavBar = () => {
             </div>
             <div>
                 <ul className="nav-list">
-                    <li><a>CELULARES</a></li>
-                    <li><a>TABLETS</a></li>
-                    <li><a>ACCESORIOS</a></li>
+                    <li><NavLink to='/category/cellphone'>CELULARES</NavLink></li>
+                    <li><NavLink to='/category/tablet'>TABLETS</NavLink></li>
+                    <li><NavLink to='/category/wearable'>ACCESORIOS</NavLink></li>
                 </ul>
             </div>
             <div className="cart-widget-container">
