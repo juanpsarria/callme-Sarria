@@ -81,10 +81,4 @@ export const PRODUCTS = [
     },
 ]
 
-export const getProducts = () => {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve(PRODUCTS);
-        }, 2000);
-    });
-};
+export default PRODUCTS;

@@ -1,18 +1,23 @@
-import React from "react";
+import React, { useState} from "react";
 import { Link, NavLink } from "react-router-dom";
 //SE IMPORTA LOGO
 import logo from "./img/logo.png";
 //SE IMPORTA COMPONENTE
 import CartWidget from "./CartWidget";
+import Sidebar from "./Sidebar";
 import "./style.css";
 
 
 //SE CREA COMPONENTE NavBar, IMPORTADO EN App.js
 const NavBar = () => {
+    const [isOpen, setIsOpen] = useState(false);
+    const onHandlerCart = () => {
+        setIsOpen(!isOpen);
+    }
     return (
         <header className="app-header">
             <div>
-                <Link to='/'><img src={logo} className="app-logo" alt="logo"/></Link>
+                <Link to='/'><img src={logo} className="app-logo" alt="logo" /></Link>
             </div>
             <div>
                 <ul className="nav-list">
@@ -22,7 +27,8 @@ const NavBar = () => {
                 </ul>
             </div>
             <div className="cart-widget-container">
-                <CartWidget/>
+                <Sidebar onClose={onHandlerCart} isOpen={isOpen} />
+                <CartWidget onHandlerCart={onHandlerCart} />
             </div>
         </header>
     )

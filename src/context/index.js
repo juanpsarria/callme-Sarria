@@ -1,27 +1,23 @@
-import React, {useState, useEffect} from "react";
-import { Link, useLocation, useParams } from "react-router-dom";
-import { getProducts } from "../hooks/index";
-import Detail from "./ItemDetail";
-import "./style.css";
+import React, { createContext, useState } from 'react';
+import PRODUCTS from '../constants/data/products';
 
-const ItemDetailContainer = () => {
-    const [products, setProducts]= useState([])
+const initialState = {
+    products: [],
+    cart: [],
+    setCart: () => {},
+    getItemQuantity: () => {},
+    onDecreaseItem: () => {},
+    onIncreaseItem: () => {},
+    total: 0
+}
 
-    const {id}= useParams();
-    const { state } = useLocation() || {};
+export const CartContext = createContext(initialState);
+
+export const CartProvider = ({ children }) => {
+    const [products, setProducts] = useState([]);
+    const [categories, setCategories] = useState([]);
     const [cart, setCart] = useState([]);
-
-    useEffect(()=>{
-        getProducts()
-        .then((res)=> {
-            if(id){
-                setProducts(res.filter((item)=> item.id === id))
-            }else{
-                setProducts(res)
-            }
-        })
-    },[id])
-
+    
     const onDecreaseItem = (id) => {
         setCart(currentCart => {
             if(currentCart?.find((product) => product.id === id)?.quantity === 1){
@@ -41,7 +37,7 @@ const ItemDetailContainer = () => {
         })
     }
     const onIncreaseItem = (id) => {
-        const item = products.find((product) => product.id === id);
+        const item = PRODUCTS.find((product) => product.id === id);
         if(cart?.find((product) => product.id === id)?.quantity === item.stock) return;
         if(cart?.length === 0) {
             setCart([{...item, quantity: 1}])
@@ -59,24 +55,24 @@ const ItemDetailContainer = () => {
             })
         }
     }
+
     const getItemQuantity = (id) => {
         return cart?.find((product) => product.id === id)?.quantity || 0;
     }
 
+    const total = cart?.reduce((acc, product) => {
+        return acc + (product.price * product.quantity);
+    }, 0);
+
+    const onRemoveItem = (id) => {
+        setCart(currentCart => {
+            return currentCart.filter((product) => product.id !== id);
+        })
+    }
+
     return (
-        <div className="detail-container">
-            {state ? (
-            <Detail 
-                id={id}
-                product={state} 
-                key={state?.name} 
-                onSelect={() => {}} type='card' 
-                descreaseQty={onDecreaseItem} 
-                increaseQty={onIncreaseItem} 
-                numberOfItem={getItemQuantity(state?.id)}
-                />
-            ) : <Link to="/" className="button-cart">VOLVER AL INICIO</Link>}
-        </div>
+        <CartContext.Provider value={{ cart, setCart, onDecreaseItem, onIncreaseItem, getItemQuantity, onRemoveItem, total, products, setProducts}}>
+            {children}
+        </CartContext.Provider>
     )
-};
-export default ItemDetailContainer;
+}

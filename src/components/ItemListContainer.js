@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from 'react-router-dom';
-import { getProducts } from "../constants/data/products";
-import Card from "./Item";
+import { getProducts } from "../hooks/index";
+import Card from "./ItemList";
 import "./style.css";
 
 const ItemListContainer = () => {

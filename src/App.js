@@ -6,8 +6,8 @@ import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer.js';
 import './App.css';
 
-//SE CREAR LA CLASS Display PARA RENDERIZAR LOS DIFERENTES COMPONENTES
-const Display = () =>{
+
+const App = () =>{
     return (
         <BrowserRouter>
             <NavBar/>
@@ -20,4 +20,4 @@ const Display = () =>{
     )
 };
 
-export default Display;
+export default App;

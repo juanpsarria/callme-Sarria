@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import './style.css'
 
 const Detail = ({ product, onSelect, descreaseQty, increaseQty, numberOfItem }) => {
     const { id, description, image, name, price, stock } = product || {};
+    const {cart, setCart} = useState
+
+    const addToCart = (product) => {
+        setCart([...cart,product]);
+    };
+
     return (
         <div className="detail" onClick={() => onSelect(product)}>
             <div>
@@ -36,7 +42,8 @@ const Detail = ({ product, onSelect, descreaseQty, increaseQty, numberOfItem }) 
                             >+</button>
                         </div>
                     </div>
-                    <button className="add-to-cart-button">Agregar al carrito</button>
+                    <button className="add-to-cart-button"
+                    onClick={()=> addToCart(product)}>Agregar al carrito</button>
                 </div>
             </div>
         </div>

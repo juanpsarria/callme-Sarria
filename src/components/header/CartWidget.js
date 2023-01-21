@@ -1,17 +1,20 @@
-import React from "react";
+import React, {useContext} from "react";
+import { CartContext } from "../../context";
 //SE IMPORTA IMAGEN DE CARRITO
 import cartWidget from './img/cart-widget.png';
 import './style.css';
 
 //SE CREA COMPONENTE, IMPORTADO EN NavBar.js
-const CartWidget = () => {
-    return(
-    <div className="cart-container">
-        <img src={cartWidget} className="cart-img" alt="Carrito de compras"/>
-        <div className="cart-quantity-container">
-            <span className="cart-quantity">0</span>
+const CartWidget = ({onHandlerCart}) => {
+    const { cart } = useContext(CartContext);
+
+    return (
+        <div className="cart-container" onClick={onHandlerCart}>
+            <img src={cartWidget} className="cart-img" />
+            <div className="cart-quantity-container">
+                <span className="cart-quantity">{cart.length}</span>
+            </div>
         </div>
-    </div>
     )
 };
 
